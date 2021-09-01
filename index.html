@@ -3,6 +3,7 @@
 
 <head>
     <title>Ship</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -10,100 +11,71 @@
         rel="stylesheet">
 </head>
 
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin-top: 5%;
-        justify-content: center;
-        background-color: rgb(247, 247, 247);
-    }
-
-    .box {
-        width: 550px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 0px 1px rgb(201, 201, 201);
-        padding: 10px;
-        background-color: white;
-    }
-
-    .sidebox {
-        width: 250px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 0px 1px rgb(201, 201, 201);
-        padding: 10px;
-        background-color: white;
-    }
-
-    .box:hover {
-        background-color: rgb(233, 233, 233);
-    }
-
-    .sidebox:hover {
-        background-color: rgb(233, 233, 233);
-    }
-
-
-    a {
-        text-decoration: none;
-        color: initial;
-    }
-
-    input {
-        all: unset;
-        font: 16px;
-        width: 250px;
-      }
-
-      ::placeholder {
-        color: rgb(134, 134, 134);
-      }
-</style>
-
 <body style="display: flex;">
-    <div class="col1" style="margin-right: 25px;">
-    <a href="index.html">
-        <div class="box" style="margin-bottom: 25px; display: flex">
-            <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
-            <div>
-                <h3 style="margin: 0px;">A very interesting article</h3>
-                <p style="color: rgb(134, 134, 134);margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea.</p>
-            </div>
-        </div>
-    </a>
-    <a href="index.html">
-        <div class="box">
-            <img src="img2.jpeg" style="width: 550px; border-radius: 5px;">
-            <h1 style="margin-bottom: 0%;">A very interesting article</h1>
-            <p style="color: rgb(134, 134, 134);margin-top: 0%;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea dictumst. Integer vulputate
-                sollicitudin lectus, sit amet facilisis leo dignissim in. Nam nisi sapien, posuere auctor dictum id,
-                consequat ullamcorper sem. Aenean vel mauris ut ante egestas hendrerit. Sed ac augue aliquam, volutpat
-                risus in, dapibus quam. Proin nisi massa, imperdiet id nisl gravida, consectetur porttitor libero.</p>
-        </div>
-    </a>
-    </div>
-    <div class="col2">
-        <div class="sidebox" style="margin-bottom: 25px; display: flex">
-            <div>
-                <form role="search" id="form">
-                    <input id="query" name="q" placeholder="Search the internet 🔎">
-                  </form>
-            </div>
-        </div>
+    <div class="col-1">
         <a href="index.html">
-            <div class="sidebox" style="margin-bottom: 25px; display: flex">
+            <div class="box-a">
+                <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
                 <div>
-                    <h3 style="margin: 0px;">About me</h3>
-                    <p style="color: rgb(134, 134, 134);margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse.</p>
+                    <h3>A very interesting article</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea.</p>
+                </div>
+            </div>
+        </a>
+        <a href="index.html">
+            <div class="box-a">
+                <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
+                <div>
+                    <h3>A very interesting article</h3>
+                    <p>
+
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacus lectus, rhoncus sed
+                        cursus sit amet, luctus at quam. Maecenas finibus, mi non ultricies luctus, mauris arcu egestas
+                        dui, non iaculis mauris ex sed risus. Fusce gravida auctor consequat. Vivamus non nisl sapien.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sed
+                        ex varius nulla malesuada convallis. Integer eu dolor quis justo rhoncus laoreet id id eros.
+                        Aliquam erat volutpat. Nullam sed aliquam arcu. Nullam tincidunt facilisis urna quis vestibulum.
+                        Aenean eleifend venenatis eros, ut viverra mauris aliquam vitae. Maecenas nec massa velit.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
                 </div>
             </div>
         </a>
     </div>
-    <footer>
-
-    </footer>
+    <div class="col2">
+        <div class="box-b">
+            <div>
+                <form role="search" id="form">
+                    <input id="query" name="q" placeholder="Search the internet 🔎">
+                </form>
+            </div>
+        </div>
+        <a href="index.html">
+            <div class="box-b">
+                <div>
+                    <h3>About me</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse.</p>
+                </div>
+            </div>
+        </a>
+        <a href="https://studiodenali.cz/">
+            <div class="box-b">
+                <div>
+                    <h3>About me</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse.</p>
+                </div>
+            </div>
+        </a>
+        <footer>
+            <p><a href="https://en.wikipedia.org/wiki/Copyright" target="_blank">&copy;</a>
+                <script>document.write(new Date().getFullYear())</script> Jakub Klapka ⦁ <a
+                    href="https://twitter.com/jakubklapka" target="_blank">Twitter</a>
+            </p>
+        </footer>
+    </div>
 </body>
 <script>
     const f = document.getElementById('form');
@@ -111,13 +83,13 @@
     const brave = 'https://search.brave.com/search?q=';
 
     function submitted(event) {
-      event.preventDefault();
-      const url = brave + q.value;
-      const win = window.open(url, '_blank');
-      win.focus();
+        event.preventDefault();
+        const url = brave + q.value;
+        const win = window.open(url, '_blank');
+        win.focus();
     }
 
     f.addEventListener('submit', submitted);
-  </script>
+</script>
 
 </html>
