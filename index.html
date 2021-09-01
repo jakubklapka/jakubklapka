@@ -13,7 +13,7 @@
 <style>
     body {
         font-family: 'Roboto', sans-serif;
-        margin: 5% 35%;
+        margin: 5% 30%;
         background-color: rgb(247, 247, 247);
     }
 
@@ -46,6 +46,16 @@
         text-decoration: none;
         color: initial;
     }
+
+    input {
+        all: unset;
+        font: 16px;
+        width: 250px;
+      }
+
+      ::placeholder {
+        color: rgb(134, 134, 134);
+      }
 </style>
 
 <body style="display: flex;">
@@ -73,12 +83,19 @@
     </a>
     </div>
     <div class="col2">
+        <div class="sidebox" style="margin-bottom: 25px; display: flex">
+            <div>
+                <form role="search" id="form">
+                    <input id="query" name="q" placeholder="Search the internet 🔎">
+                  </form>
+            </div>
+        </div>
         <a href="index.html">
             <div class="sidebox" style="margin-bottom: 25px; display: flex">
                 <div>
                     <h3 style="margin: 0px;">About me</h3>
                     <p style="color: rgb(134, 134, 134);margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea.</p>
+                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse.</p>
                 </div>
             </div>
         </a>
@@ -87,5 +104,19 @@
 
     </footer>
 </body>
+<script>
+    const f = document.getElementById('form');
+    const q = document.getElementById('query');
+    const brave = 'https://search.brave.com/search?q=';
+
+    function submitted(event) {
+      event.preventDefault();
+      const url = brave + q.value;
+      const win = window.open(url, '_blank');
+      win.focus();
+    }
+
+    f.addEventListener('submit', submitted);
+  </script>
 
 </html>
