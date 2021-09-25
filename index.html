@@ -13,36 +13,25 @@
 
 <body style="display: flex;">
     <div class="col-1">
-        <a href="index.html">
-            <div class="box-a">
-                <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
-                <div>
-                    <h3>A very interesting article</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea.</p>
-                </div>
-            </div>
-        </a>
-        <a href="index.html">
-            <div class="box-a">
-                <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
-                <div>
-                    <h3>A very interesting article</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacus lectus, rhoncus sed
-                        cursus sit amet, luctus at quam. Maecenas finibus, mi non ultricies luctus, mauris arcu egestas
-                        dui, non iaculis mauris ex sed risus. Fusce gravida auctor consequat. Vivamus non nisl sapien.
-                    </p>
-                </div>
-            </div>
-        </a>
+        <ul id="list" style="list-style-type: none;">
+            <li>
+                <a href="index.html">
+                    <div class="box-a">
+                        <img src="img.jpeg" style="width: 75px; height: 75px; border-radius: 5px; margin-right: 10px;">
+                        <div>
+                            <h3>Welcome to my new blog!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit. Curabitur suscipit condimentum sollicitudin. In hac habitasse platea.</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="col2">
         <div class="box-b">
             <div>
-                <form role="search" id="form">
-                    <input id="query" name="q" placeholder="Search">
-                </form>
+                <input type="text" id="search" onkeyup="myFunction()" placeholder="Search" style="width: 300px;">
             </div>
         </div>
         <a href="index.html">
@@ -95,18 +84,23 @@
     </div>
 </body>
 <script>
-    const f = document.getElementById('form');
-    const q = document.getElementById('query');
-    const brave = 'https://search.brave.com/search?q=';
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
 
-    function submitted(event) {
-        event.preventDefault();
-        const url = brave + q.value;
-        const win = window.open(url, '_blank');
-        win.focus();
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("h3")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
     }
-
-    f.addEventListener('submit', submitted);
 </script>
 
 </html>
