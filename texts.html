@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>texts</title>
+  <meta name="author" content="Jakub Klapka">
+  <meta name="description" content="open web text processor">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    body{font-family: 'Roboto', sans-serif;margin: 2.5%}
+    .action{height: 25px;width: 25px}
+    #fontsize{height: 25px;width: 40}
+    #font{width: 75px;height: 25px}
+    #myColor{height: 25px;width: 25px}
+    [contentEditable=true]:empty:not(:focus):before{content:attr(data-text);color:#888}
+    a{text-decoration:none}
+    #overlay {position:fixed;display:none;width:100%;height:100%;left:0;right:0;bottom:0;background-color:black;z-index:2;cursor:pointer}
+    #text{position:absolute;top:50%;left:50%;font-size:50px;color:white;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%)}
+  </style>
+</head>
+<body>
+  <div class="logo"><h1><a style="color:black;" title="texts: a small text processor project" href="https://jakubklapka.github.io/texts/">texts</a><a title="versions" href="https://github.com/jakubklapka/texts/releases" target="_blank"><sup style="font-size:small;color:lightgrey;cursor:pointer">0.1</sup></a></h1></div>
+  <div class="menu" style="display: inline;">
+    <select id="font" onchange="changeFont (this);" title="font">
+      <option value="Arial">Arial</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Sans serif">Sans serif</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Palatino">Palatino</option>
+      <option value="Garamond">Garamond</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Arial Black">Arial Black</option>
+      <option value="Tahoma">Tahoma</option>
+      <option value="Roboto">Roboto</option>
+    </select>
+    <select id="fontsize" onclick="changeSize()" title="size">
+      <option value="1">1</option>      
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
+    <button class="action" onclick="document.execCommand( 'bold',false,null);" title="bold" style="font-weight: 600;">B</button>
+    <button class="action" onclick="document.execCommand('italic',false,null);" title="italic"><i>I</i></button>
+    <button class="action" onclick="document.execCommand( 'underline',false,null);" title="underline"><u>U</u></button>
+    <button class="action" onclick="document.execCommand( 'strikethrough',false,null);" title="strikethrough"><del>T</del></button>
+    <input onchange="chooseColor()" id="myColor" title="color" type="color" style="margin: 0px;">
+    <!--
+    <button onclick="document.execCommand( 'justifyLeft',false,null);"></button>
+    <button onclick="document.execCommand( 'justifyCenter',false,null);"></button>
+    <button onclick="document.execCommand( 'justifyRight',false,null);"></button>
+    <button onclick="document.execCommand( 'redo',false,null);"></button>
+    <button onclick="document.execCommand( 'undo',false,null);"></button>
+    <button onclick="document.execCommand('insertOrderedList', false, null);"></button>
+    <button onclick="document.execCommand('insertUnorderedList',false, null)"></button>    
+    -->
+  </div>
+  <h1></h1>
+  <div id="editor" style="outline: none;" contenteditable="true" data-text="Write something amazing..."></div>
+  <div id="overlay">
+    <div id="text">Versions</div>
+  </div>
+  <form name="addtext" onsubmit="download(this['name'].value, this['text'].value)">
+    <h1></h1>
+    <h1></h1>
+    <!--
+    <textarea rows="10" cols="70" name="text" placeholder="Type your text here:"></textarea>
+    <br>
+    <input type="text" name="name" value="" placeholder="File Name">
+    <input type="submit" onclick="addTextHTML();" value="Save As HTML">
+    <input type="submit" onclick="addTexttxt();" value="Save As TXT">
+    -->
+    </form>
+  <script>
+    function chooseColor(){
+      var mycolor = document.getElementById("myColor").value;
+      document.execCommand('foreColor', false, mycolor);}
+    function changeFont(){
+      var myFont = document.getElementById("font").value;
+      document.execCommand('fontName', false, myFont);}
+    function changeSize(){
+      var mysize = document.getElementById("fontsize").value;
+      document.execCommand('fontSize', false, mysize);}
+    function checkDiv(){
+      var editorText = document.getElementById("editor1").innerHTML;
+      if(editorText === ''){
+      document.getElementById("editor1").style.border = '5px solid red';}
+    function removeBorder(){
+      document.getElementById("editor1").style.border = '1px solid transparent';}}
+      
+    /* Dev */
+
+    function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
+
+function addTextHTML()
+{
+    document.addtext.name.value = document.addtext.name.value + ".html"
+}
+
+function addTextTXT()
+{
+    document.addtext.name.value = document.addtext.name.value + ".txt"
+}
+		
+  </script>
+</body>
+</html>
