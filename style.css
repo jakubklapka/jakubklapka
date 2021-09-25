@@ -70,3 +70,12 @@ input {
 ::placeholder {
     color: rgb(134, 134, 134);
 }
+
+.picture{
+    padding: 15px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 35px;
+}
