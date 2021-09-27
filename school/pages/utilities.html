@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- All content, photos and code was created or taken by Jakub Klapka. Any unauthorized copying of this webpages content or code may be prosecuted. -->
+<head>
+  <meta charset="UTF-8"> <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="..\style.css"> <!-- Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="..\img\favicon.ico"/> <!-- Favicon -->
+  <title>Užitečnosti - Jakub Klapka</title> <!-- Title -->
+</head>
+<body>
+  <div class="nav"> <!-- Menu -->
+    <a class="logo" href="..\index.html">Jakub Klapka</a>
+    <a class="item" href="..\pages\gallery.html">Galerie</a>
+    <a class="itema" href="..\pages\utilities.html">Užitečnosti</a>
+    <div class="sub"><button class="subb">Odkazy <i class="fa fa-caret-right"></i></button>
+      <div class="subc">
+      <a href="https://studiodenali.cz/" target="_blank">Studio Denali</a>
+      <a href="http://109.231.158.142:82/beta/web/x24brzydav/" target="_blank">David Brzý</a>
+      <a href="https://jacobv-dev.github.io/School-website/" target="_blank">Jakub Vorel</a>
+      <a href="https://twitter.com/jakubklapka" target="_blank">Twitter</a>
+      <a href="https://www.youtube.com/channel/UCD5iDdhsh6fta5piIv6lFCA" target="_blank">Roasted</a>
+      <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+      </div>
+    </div>
+    <div class="header">Užitečnosti <span style="font-weight: 300;">Utilities Utilidad Nützlichkeit</span></div>
+  </div>
+
+  <div style="margin: 2.5%">
+<h1>Stránka se připravuje</h1>
+<p id="cat-fact">Klikněte na tlačítko pro fakty o kočkách :3</p>
+<button id="show-fact">Nový fakt</button>
+</div>
+<script>
+    var factPlaceholder = document.getElementById("cat-fact");
+var showFact = document.getElementById("show-fact");
+
+var CatFacts = ["Nejvyšší rychlost, kterou je kočka schopná dosáhnout na krátkou vzdálenost, je asi 48 km/h.",
+               "Kotě po narození váží 90-120 gramů.",
+               "Barva očí malého koťátka se vždycky změní, až vyroste.",
+               "Kočka obvykle pohlavně dospívá v šesti až devíti měsících života.",
+               "Kočka průměrně prospí 70% svého života.",
+               "Nejstarší video o kočkách, které bylo nahráno na YouTube, pochází z roku 1894",
+               "Americká CIA investovala 20 milionů dolarů na cvičení kočičích zvědů, které měli špěhovat sověty. První kočku špionku přejelo taxi.",
+               "Kočky mají tři oční víčka.",
+               "Kočka má 100 různých hlasových projevů ve svém repertoáru, zatímco pes jich má pouze 10.",
+               "V Rusku existuje divadlo, kde jsou všichni herci pouze kočky.",
+               "Kočky nerozumí trestu tak jako psi. Pro požadované chování potřebují být dovedeny odměnami a pochvalami.",
+               "Ve starém Egyptě bylo zabití kočky, i když neúmyslné, trestáno smrtí.",
+               "Obyčejná domácí kočka je rychlejší než Usain Bolt. Dokáže vyvinout rychlost 50 km/h a Boltova rychlost je jen 43 km/h.",
+               "První kočka ve vesmíru byla francouzská kočka s názvem Felicette (“Astrokočka”). Cestu úspěšně absolvovala a živá se vrátila na zpátky zem."]
+
+var factNumber;
+
+function randomFact(){
+  return CatFacts[factNumber];
+}
+
+showFact.addEventListener('click', function(){
+  factNumber = Math.floor(Math.random()*14);
+  factPlaceholder.textContent = randomFact();
+});
+</script>
