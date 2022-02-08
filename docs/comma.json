@@ -1,0 +1,32 @@
+{
+    "name": "Jacob's Blog",
+    "description": "Internal website for testing",
+    "author": "Jakub Klapka & David Brzý",
+    "keywords": "test, website",
+    "color": "#000000",
+    "url": "http://www.example.com",
+    "noindex": true,
+    "files": {
+        "index": "./index.html",
+        "script": "./script.js",
+        "style": "./style.css"
+    },
+    "modules": {
+        "cookies": {
+            "version": 1.0,
+            "source": "../library/cookies/script.js"
+        },
+        "construction": {
+            "version": 1.0,
+            "source": "../library/construction/script.js"
+        },
+        "editor": {
+            "version": 1.0,
+            "source": null,
+            "options" : {
+                "showDevTools": false,
+                "showHelp": false
+            }
+        }
+    }
+}
